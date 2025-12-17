@@ -16,9 +16,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from Ridehub.views import Ride
+from Ridehub.views import Ride,bus_info,Users_details,bus_list,busbooking,make_payment,update_ticket,delete_ticket
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+     path('admin/', admin.site.urls), 
     path('RideHub/',Ride),
+    path('bus/',bus_info),
+    path('user/',Users_details),
+    path('buses/',bus_list),
+    path('bookings/',busbooking),
+    path('make_payment/',make_payment),
+    path('update/<int:id>/', update_ticket),
+    # path('update/',update_ticket),
+    path('delete/',delete_ticket),
+
 ]
